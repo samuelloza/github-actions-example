@@ -12,3 +12,6 @@ jobs:
 
     - name: Run ls
       run: ls -lha
+
+    - name: Create empty file
+      run: touch file_example
