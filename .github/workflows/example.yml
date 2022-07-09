@@ -14,7 +14,7 @@ jobs:
       run: ls -lha
 
     - name: Create file
-      run: tar -czvf example.tar.gz .
+      run: tar -czvf example.tar.gz *
 
     - name: Run ls
       run: ls -lha      
