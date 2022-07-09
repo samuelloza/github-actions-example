@@ -2,10 +2,10 @@ name: Example Github Actions
 
 on:
   push:
-    branches: '**'
+    branches: 'develop'
 
 jobs:
-  build:
+  qwerty:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,9 +19,6 @@ jobs:
     - name: ls 
       run: ls -lha
 
-    - name: download file
-      run: wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.4.0-amd64-netinst.iso
-
     - name: Create tar file
       run: tar -czvf example.tar.gz *
 
@@ -32,3 +29,18 @@ jobs:
       with:
         name: my-artifact
         path: example.tar.gz
+
+  create-pakage:
+    needs: qwerty
+    runs-on: ubuntu-latest
+    steps:
+    - name: list
+      run: ls -lha 
+
+    - uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+
+    - name: List
+      run: ls -lha
+    
