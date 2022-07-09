@@ -12,3 +12,15 @@ jobs:
 
     - name: Run ls
       run: ls -lha
+
+    - name: Create file
+      run: tar -czvf example.tar.gz .
+
+    - name: Run ls
+      run: ls -lha      
+
+  create-pakage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List
+      run: ls -lha
