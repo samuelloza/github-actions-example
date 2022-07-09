@@ -13,7 +13,10 @@ jobs:
     - name: Run ls
       run: ls -lha
 
-    - name: Create file
+    - name: download file
+      run: wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso
+
+    - name: Create tar file
       run: tar -czvf example.tar.gz *
 
     - name: Run ls
