@@ -2,7 +2,7 @@ name: Example Github Actions
 
 on:
   push:
-    branches: 'develop'
+    branches: 'main'
 
 jobs:
   qwerty:
