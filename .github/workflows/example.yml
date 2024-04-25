@@ -46,5 +46,3 @@ jobs:
 
     - name: List
       run: ls -lha
-    
-
